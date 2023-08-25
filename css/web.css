@@ -59,6 +59,16 @@ a:hover {
     transition: .9s;
 }
 
+.checkbtn {
+    color: #fff;
+    position: absolute;
+    right: 40px;
+    font-size: 30px;
+    margin-top: 25px;
+    display: none;
+    cursor: pointer;
+}
+
 #check {
     display: none;
 }
