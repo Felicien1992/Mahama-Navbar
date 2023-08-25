@@ -6,6 +6,13 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary: #ddd;
+    --blue: #0082e6;
+    --light: #fff;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.553);
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -14,6 +21,9 @@ nav {
     background: rgb(54, 139, 235);
     height: 80px;
     width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
 }
 
 label.logo {
@@ -25,8 +35,8 @@ label.logo {
 }
 
 nav ul {
-    margin-right: 20px;
-    float: right;
+    display: flex;
+    list-style: none;
 }
 
 nav ul li {
@@ -40,6 +50,7 @@ nav ul li a {
     text-transform: uppercase;
     border-radius: 3px;
     padding: 7px 13px;
+    font-size: 17px;
 }
 
 a.active,
@@ -48,21 +59,230 @@ a:hover {
     transition: .9s;
 }
 
-.checkbtn {
-    font-size: 30px;
-    color: white;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none;
-}
-
 #check {
     display: none;
 }
 
+/*==============================*/
+
+.btn {
+    background: var(--blue);
+    color: var(--light);
+    padding: 0.6rem 1.3rem;
+    border-radius: 20px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.wrapper {
+    display: grid;
+    gap: 20px;
+}
+
+/*top container*/
+
+.top-container {
+    margin-top: 80px;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-areas: 'showcase top-box-a'
+        'showcase top-box-b';
+}
+
+.showcase {
+    grid-area: showcase;
+    min-height: 400px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(../images/carolina-nichitin-UcSPxK85wWk-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    color: var(--light);
+}
+
+.showcase:hover {
+    text-transform: bold;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(../images/venti-views-81gtVXu3w-0-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(39, 143, 25);
+    transition: 1s;
+}
+
+.showcase h1 {
+    font-size: 4rem;
+    margin-bottom: 0;
+    color: var(--light);
+
+}
+
+.showcase p {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    font-weight: normal;
+    margin-top: 0;
+    color: var(--light);
+}
+
+.top-box {
+    background: var(--light);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    box-shadow: var(--shadow);
+    padding: 1.9rem;
+    margin: 10px;
+}
+
+.top-box-a {
+    grid-area: top-box-a;
+    background: var(--light);
+    display: grid;
+    align-items: center;
+    box-shadow: var(--shadow);
+    padding: 1.9rem;
+    margin: 10px;
+}
+
+.top-box .student {
+    font-size: 1.5rem;
+}
+
+
+.top-box-b {
+    grid-area: top-box-b;
+    background: var(--light);
+    display: grid;
+    align-items: center;
+    box-shadow: var(--shadow);
+    padding: 1.9rem;
+    margin: 10px;
+}
+
+
+/*info*/
+
+.info {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem;
+}
+
+.info_content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/*===services====*/
+
+.services_main {
+    background-color: var(--light);
+    width: 100%;
+    height: 100%;
+    padding: 0 8%;
+}
+
+.services_main h2 {
+    text-align: center;
+    padding-top: 6%;
+    margin-bottom: 60px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.services_main h2::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background-color: var(--blue);
+    border-radius: 20px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.row .service {
+    padding: 25px 15px;
+    background: transparent;
+    font-size: 15px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.row .service:hover {
+    color: #fff;
+    background-color: var(--blue);
+    transform: scale(1.05);
+}
+
+.row .service i {
+    color: var(--blue);
+    margin-bottom: 20px;
+    font-size: 40px;
+    transition: 0.5s;
+}
+
+.row .service:hover i {
+    color: #fff;
+}
+
+.row .service h2 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+
+/*********MEDIAQUERY********************/
+
+
 @media(max-width: 952px) {
+
+    /*==========NAV FO TABLETTE======*/
+
+    #check:checked~.checkbtn i:before {
+        content: "\f00d";
+    }
+
+    #check:checked~ul {
+        left: 0%;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        background: #111;
+        height: 100vh;
+        width: 100%;
+        display: block;
+        text-align: center;
+        transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+    }
 
     label.logo {
         font-size: 30px;
@@ -73,10 +293,33 @@ a:hover {
         font-size: 16px;
     }
 
+    .checkbtn {
+        display: block;
+    }
+
+    /*========MAIN CONTAINT==============*/
+
+    .showcase h1 {
+        font-size: 2.5rem;
+    }
+
+    .top-container {
+        grid-template-areas: 'showcase showcase' 'top-box-a top-box-b';
+    }
+
+
+    /*services*/
+
+    .services_main {}
+
 
 }
 
 @media(max-width: 858px) {
+
+    nav ul {
+        display: block;
+    }
 
     .checkbtn {
         display: block;
@@ -91,10 +334,6 @@ a:hover {
         left: -100%;
         text-align: center;
         transition: all .5s;
-        -webkit-transition: all .5s;
-        -moz-transition: all .5s;
-        -ms-transition: all .5s;
-        -o-transition: all .5s;
     }
 
     nav ul li {
@@ -115,5 +354,23 @@ a:hover {
 
     #check:checked~ul {
         left: 0;
+    }
+
+    .top-container {
+        grid-template-areas: 'showcase'
+            'top-box-a'
+            'top-box-b';
+    }
+
+    /*======info======*/
+
+    .info {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .info .btn {
+        display: block;
+        text-align: center;
+        margin: auto;
     }
 }
