@@ -10,7 +10,10 @@
     --primary: #ddd;
     --blue: #0082e6;
     --light: #fff;
-    --shadow: 0 1px 5px rgba(104, 104, 104, 0.553);
+    --shadow: 1px 2px 8px rgba(104, 104, 104, 0.553),
+        1px 2px 8px rgba(104, 104, 104, 0.553),
+        1px 2px 8px rgba(104, 104, 104, 0.553),
+        1px 2px 8px rgba(104, 104, 104, 0.553);
 }
 
 body {
@@ -48,7 +51,7 @@ nav ul li {
 nav ul li a {
     color: white;
     text-transform: uppercase;
-    border-radius: 3px;
+    border-radius: 10px;
     padding: 7px 13px;
     font-size: 17px;
 }
@@ -56,7 +59,7 @@ nav ul li a {
 a.active,
 a:hover {
     background-color: rgb(78, 159, 226);
-    transition: .9s;
+    transition: .7s;
 }
 
 .checkbtn {
@@ -99,6 +102,7 @@ img {
     grid-gap: 5px;
     grid-template-areas: 'showcase top-box-a'
         'showcase top-box-b';
+    background: #afd2ee;
 }
 
 .showcase {
@@ -114,18 +118,19 @@ img {
     align-items: start;
     gap: 20px;
     justify-content: center;
-    box-shadow: var(--shadow);
+    box-shadow: 1px 3px 10px rgb(92, 73, 73);
     color: var(--light);
+    border-radius: 15px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
 
 .showcase:hover {
-    text-transform: bold;
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(../images/venti-views-81gtVXu3w-0-unsplash.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: rgb(39, 143, 25);
-    transition: 1s;
+    transition: 2s;
 }
 
 .showcase h1 {
@@ -151,6 +156,7 @@ img {
     box-shadow: var(--shadow);
     padding: 1.9rem;
     margin: 10px;
+    border-radius: 15px;
 }
 
 .top-box-a {
@@ -164,7 +170,7 @@ img {
 }
 
 .top-box .student {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 
@@ -185,6 +191,7 @@ img {
     display: grid;
     grid-gap: 30px;
     grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: 1fr 1fr;*/
     padding: 3rem;
 }
 
@@ -217,9 +224,9 @@ img {
     position: absolute;
     bottom: -8px;
     left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 5px;
+    transform: translate(-50%);
+    width: 130px;
+    height: 6px;
     background-color: var(--blue);
     border-radius: 20px;
 }
@@ -233,7 +240,7 @@ img {
 .row .service {
     padding: 25px 15px;
     background: transparent;
-    font-size: 15px;
+    font-size: 20px;
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
@@ -249,7 +256,7 @@ img {
 .row .service i {
     color: var(--blue);
     margin-bottom: 20px;
-    font-size: 40px;
+    font-size: 60px;
     transition: 0.5s;
 }
 
@@ -288,10 +295,6 @@ img {
         display: block;
         text-align: center;
         transition: all 0.3s ease;
-        -webkit-transition: all 0.3s ease;
-        -moz-transition: all 0.3s ease;
-        -ms-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
     }
 
     label.logo {
@@ -317,14 +320,9 @@ img {
         grid-template-areas: 'showcase showcase' 'top-box-a top-box-b';
     }
 
-
-    /*services*/
-
-    .services_main {}
-
-
 }
 
+/*services*/
 @media(max-width: 858px) {
 
     nav ul {
@@ -348,7 +346,7 @@ img {
 
     nav ul li {
         display: block;
-        margin: 50px 0;
+        margin: 100px 0;
         line-height: 30px;
     }
 
